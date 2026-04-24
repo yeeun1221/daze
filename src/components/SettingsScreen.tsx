@@ -15,8 +15,12 @@ export function SettingsScreen({ profile, onUpdateProfile, onBack }: SettingsScr
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const url = URL.createObjectURL(file);
-      onUpdateProfile({ ...profile, avatarUrl: url });
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result as string;
+        onUpdateProfile({ ...profile, avatarUrl: base64String });
+      };
+      reader.readAsDataURL(file);
     }
   };
 
