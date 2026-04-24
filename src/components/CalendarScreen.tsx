@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import * as Icons from 'lucide-react';
 import { DiaryEntry } from '../types';
@@ -28,6 +28,17 @@ export function CalendarScreen({ entries, onEntryClick, onWriteDiary, initialDat
 
     const [currentDate, setCurrentDate] = useState(() => new Date(defaultDateObj.getFullYear(), defaultDateObj.getMonth(), 1));
     const [selectedDate, setSelectedDate] = useState(defaultDateObj);
+
+    useEffect(() => {
+      if (initialDate) {
+        const [y, m, d] = initialDate.split('-');
+        if (y && m && d) {
+          const newDate = new Date(parseInt(y), parseInt(m) - 1, parseInt(d));
+          setSelectedDate(newDate);
+          setCurrentDate(new Date(newDate.getFullYear(), newDate.getMonth(), 1));
+        }
+      }
+    }, [initialDate]);
 
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();

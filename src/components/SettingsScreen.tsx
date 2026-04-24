@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'motion/react';
 import { ChevronLeft, Camera, User } from 'lucide-react';
 import { UserProfile } from '../types';
