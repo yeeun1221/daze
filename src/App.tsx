@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import { AnimatePresence, motion } from 'motion/react';
 import { Screen, DiaryEntry, Task, UserProfile } from './types';
 import { mockDiaryEntries, mockTasks, mockStickers } from './data';
@@ -15,19 +16,19 @@ import { SettingsScreen } from './components/SettingsScreen';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('todo');
-  const [userProfile, setUserProfile] = useState<UserProfile>({
+  const [userProfile, setUserProfile] = useLocalStorage<UserProfile>('daze-userProfile', {
     name: '사용자',
     avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCd0SN2zfSSMC3KZT9w9DKnaXT7hY3I7Ut7LQ4cSCOQ58oqUrd1gy6Z1nyvD853tAMoz-bypiBr35V_Xh7MM_dm-xJcxmpqRBlsKNvjWeiTWMkMyEn2BRf0vfUebcviqMjTtNgOoD-T3bY2a8V7b_0tAoMazem1bI1Qxy6ryLqAOZyTeXp1UriAy-CPRlUh90AaGtkq_Pb2Q8f7cGuGhg_q0g-pIFQl1E4eSz4ya7qy1ISrYV_rkgJuinZux8LEJKRyTHyClxaIyuc'
   });
   const [selectedEntry, setSelectedEntry] = useState<DiaryEntry | null>(null);
-  const [tasks, setTasks] = useState<Task[]>(mockTasks);
+  const [tasks, setTasks] = useLocalStorage<Task[]>('daze-tasks', mockTasks);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
-  const [diaryEntries, setDiaryEntries] = useState<DiaryEntry[]>(mockDiaryEntries);
+  const [diaryEntries, setDiaryEntries] = useLocalStorage<DiaryEntry[]>('daze-diaryEntries', mockDiaryEntries);
   
   // Rewards & Stickers
-  const [points, setPoints] = useState<number>(100); // give some starting points to play with
-  const [unlockedStickerIds, setUnlockedStickerIds] = useState<string[]>(mockStickers.filter(s => s.isUnlocked).map(s => s.id));
-  const [hasClaimedTodoReward, setHasClaimedTodoReward] = useState(false);
+  const [points, setPoints] = useLocalStorage<number>('daze-points', 100); // give some starting points to play with
+  const [unlockedStickerIds, setUnlockedStickerIds] = useLocalStorage<string[]>('daze-unlockedStickerIds', mockStickers.filter(s => s.isUnlocked).map(s => s.id));
+  const [hasClaimedTodoReward, setHasClaimedTodoReward] = useLocalStorage('daze-hasClaimedTodoReward', false);
   const [rewardPopup, setRewardPopup] = useState<RewardData | null>(null);
 
   const showReward = (amount: number, message: string) => {

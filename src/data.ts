@@ -111,7 +111,7 @@ export const mockStickers: Sticker[] = [
     description: '소원을 들어주는 별',
     category: 'Decoration',
     icon: 'Star',
-    imageUrl: '/stickers/stickers./big_star.png',
+    imageUrl: '/stickers/stickers./big star.png',
     isUnlocked: true,
   },
   {
@@ -120,7 +120,7 @@ export const mockStickers: Sticker[] = [
     description: '어둠을 밝혀주는 달',
     category: 'Decoration',
     icon: 'Moon',
-    imageUrl: '/stickers/stickers./big_moon.png',
+    imageUrl: '/stickers/stickers./big moon.png',
     isUnlocked: false,
     price: 60,
     isRare: true,

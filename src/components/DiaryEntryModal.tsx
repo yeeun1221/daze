@@ -39,7 +39,7 @@ export function DiaryEntryModal({ entry, onClose, onEdit }: DiaryEntryModalProps
           case 'Excited': return '/emotions/excited.png';
           case 'Love': return '/emotions/love.png';
           case 'Calm': return '/emotions/calm.png';
-          case 'Meh': return '/emotions/meh.png';
+          case 'Meh': return '/emotions/meh_.png';
           case 'Sad': return '/emotions/sad.png';
           case 'Tired': return '/emotions/tired.png';
           case 'Embarrassed': return '/emotions/embarrassed.png';
