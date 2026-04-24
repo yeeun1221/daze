@@ -53,7 +53,7 @@ export const mockStickers: Sticker[] = [
     description: '사랑을 담은 하트',
     category: 'Decoration',
     icon: 'Heart', // fallback
-    imageUrl: '/stickers/heart1.png',
+    imageUrl: '/stickers/diary_objects/heart1.png',
     isUnlocked: true,
   },
   {
@@ -62,7 +62,7 @@ export const mockStickers: Sticker[] = [
     description: '두 배로 사랑스러운 하트',
     category: 'Decoration',
     icon: 'Heart',
-    imageUrl: '/stickers/heart2.png',
+    imageUrl: '/stickers/diary_objects/heart2.png',
     isUnlocked: false,
     price: 30,
   },
@@ -81,7 +81,7 @@ export const mockStickers: Sticker[] = [
     description: '반짝반짝 빛나요',
     category: 'Decoration',
     icon: 'Sparkles',
-    imageUrl: '/stickers/light1.png',
+    imageUrl: '/stickers/diary_objects/light1.png',
     isUnlocked: true,
   },
   {
