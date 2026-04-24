@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-pink: #f472b6;
+  --color-primary-container: #fadadd;
+  --color-on-primary-container: #765e61;
+  --color-secondary-container: #bee1ff;
+  --color-on-secondary-container: #42647e;
+  --color-tertiary-container: #f2e2a2;
+  --color-on-tertiary-container: #706430;
+  --color-error-container: #ffdad6;
+  
+  --color-surface: #f8f9fa;
+  --color-surface-container: #edeeef;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container-highest: #e1e3e4;
+  --color-on-surface: #191c1d;
+  --color-on-surface-variant: #4f4445;
+  --color-outline: #807475;
+
+  --font-body: "Be Vietnam Pro", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  @apply bg-zinc-50;
+  overscroll-behavior-y: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pill-shadow {
+  box-shadow: 0 8px 24px rgba(250, 218, 221, 0.4);
+}
+.pill-glow {
+  box-shadow: 0 12px 24px -10px rgba(244, 114, 182, 0.5);
+}
+
