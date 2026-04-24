@@ -30,7 +30,7 @@ export function DiaryWriteScreen({ date, existingEntry, onSave, unlockedStickers
     { id: 'Excited', label: '신나요', iconSrc: '/emotions/excited.png', color: 'text-yellow-600', bg: 'bg-yellow-100', border: 'border-yellow-200' },
     { id: 'Love', label: '사랑해요', iconSrc: '/emotions/love.png', color: 'text-rose-500', bg: 'bg-rose-100', border: 'border-rose-200' },
     { id: 'Calm', label: '평온해요', iconSrc: '/emotions/calm.png', color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' },
-    { id: 'Meh', label: '보통이야', iconSrc: '/emotions/meh_.png', color: 'text-gray-600', bg: 'bg-surface-container-low', border: 'border-outline-variant/30' },
+    { id: 'Meh', label: '보통이야', iconSrc: '/emotions/meh.png', color: 'text-gray-600', bg: 'bg-surface-container-low', border: 'border-outline-variant/30' },
     { id: 'Sad', label: '슬퍼요', iconSrc: '/emotions/sad.png', color: 'text-[#42647e]', bg: 'bg-[#bee1ff]/40', border: 'border-transparent' },
     { id: 'Tired', label: '피곤해요', iconSrc: '/emotions/tired.png', color: 'text-indigo-500', bg: 'bg-indigo-100', border: 'border-indigo-200' },
     { id: 'Embarrassed', label: '당황했어요', iconSrc: '/emotions/embarrassed.png', color: 'text-orange-500', bg: 'bg-orange-100', border: 'border-orange-200' },
